@@ -2,6 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Web_API_Proyecto_final.Database;
 using Web_API_Proyecto_final.Services;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
 namespace Web_API_Proyecto_final
 {
     public class Program
@@ -10,10 +17,14 @@ namespace Web_API_Proyecto_final
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            HttpClient httpClient = new HttpClient();
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Get, "https://localhost:5001/api/name ");
+
+            //HttpResponse res = httpClient.SendAsync(req);
+            //res.IsSuccessStatusCode = true;
+            Console.WriteLine("Hello World!");
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<DatabaseContext>(options =>
