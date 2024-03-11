@@ -8,11 +8,11 @@ namespace Web_API_Proyecto_final.DTOs
 
         public string Comments { get; set; } = null!;
 
-        public string UserId { get; set; } = null!;
+        public int UserId { get; set; }
 
         public int? UsersId { get; set; }
 
-        public string? SalesId { get; set; }
+        public int? SalesId { get; set; }
 
         public virtual Sale? Sales { get; set; }
 

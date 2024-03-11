@@ -24,6 +24,7 @@ public partial class Product
     public int? UsersId { get; set; }
 
     public virtual User IdUserNavigation { get; set; } = null!;
-    public virtual ICollection<Sale> ProductSold { get; set; }
+    public virtual ICollection<Sale> Sale { get; set; }
+    public virtual ICollection<ProductSold> ProductSold { get; set; } = new List<ProductSold>();
 
 }

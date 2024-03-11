@@ -8,19 +8,19 @@ namespace Web_API_Proyecto_final.Controllers
     [Route("/api/[controller]")]
     public class ProductController : Controller
     {
-        private ProductService productService;
-        public ProductController(ProductService productService)
+        private Services.ProductService productService;
+        public ProductController(Services.ProductService productService)
         {
             this.productService = productService;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<ProductDTO>> GetProducts()
+        public ActionResult<IEnumerable<DTOs.ProductService>> GetProducts()
         {
             var products = this.productService.GetAllProducts();
             return Ok(products);
         }
         [HttpPost]
-        public IActionResult AddNewProduct([FromBody] ProductDTO product)
+        public IActionResult AddNewProduct([FromBody] DTOs.ProductService product)
         {
             if (this.productService.AddProduct(product))
             {
@@ -47,7 +47,7 @@ namespace Web_API_Proyecto_final.Controllers
                 return base.BadRequest(new { status = 400, message="Product ID is invalid" });
     }
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, ProductDTO productDTO)
+        public IActionResult UpdateProduct(int id, DTOs.ProductService productDTO)
         {
             if (id > 0)
             {

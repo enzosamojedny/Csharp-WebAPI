@@ -12,13 +12,13 @@ namespace Web_API_Proyecto_final.Services
             this.context = dbcontext;
         }
 
-        public bool AddProduct(ProductDTO product) {
+        public bool AddProduct(DTOs.ProductService product) {
             return true;
         }
-        public IEnumerable <ProductDTO> GetAllProducts()
+        public IEnumerable <DTOs.ProductService> GetAllProducts()
         {
             var product = context.Products.ToList();
-            var productDTOs = product.Select(product => new ProductDTO{
+            var productDTOs = product.Select(product => new DTOs.ProductService{
                 Id = product.Id,
                 Name = product.Name,
                 Description = product.Description,
@@ -38,7 +38,7 @@ namespace Web_API_Proyecto_final.Services
             return false;
         }
 
-        public bool UpdateProduct(int id, ProductDTO productDTO)
+        public bool UpdateProduct(int id, DTOs.ProductService productDTO)
         {
             Product? product = this.context.Products.Where(p => p.Id == id).FirstOrDefault();
 

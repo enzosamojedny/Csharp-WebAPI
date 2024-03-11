@@ -25,7 +25,7 @@ namespace Web_API_Proyecto_final.Controllers
             return this.userService.GetAllUsers();
         }
         [HttpPost]
-        public IActionResult AddNewProduct([FromBody] UserDTO user)
+        public IActionResult AddNewUser([FromBody] UserDTO user)
         {
             if (this.userService.CreateUser(user))
             {

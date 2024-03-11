@@ -39,8 +39,7 @@ namespace Web_API_Proyecto_final.Services
             if (sale != null)
             {
                 sale.Comments = saleDTO.Comments ?? saleDTO.Comments;
-                sale.UserId = saleDTO.UserId ?? saleDTO.UserId;
-                sale.UserId = saleDTO.UserId ?? saleDTO.UserId;
+                sale.UserId = saleDTO.UserId;
                 sale.UsersId = saleDTO.UsersId ?? saleDTO.UsersId;
                 sale.SalesId = saleDTO.SalesId;
                 sale.Sales = saleDTO.Sales;

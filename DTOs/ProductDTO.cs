@@ -1,6 +1,6 @@
 ﻿namespace Web_API_Proyecto_final.DTOs
 {
-    public class ProductDTO
+    public class ProductService
     {
         public int Id { get; set; }
 

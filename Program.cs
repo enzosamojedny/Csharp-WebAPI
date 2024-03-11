@@ -33,6 +33,8 @@ namespace Web_API_Proyecto_final
             });
             builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<SaleService>();
+            builder.Services.AddScoped<ProductSoldService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
